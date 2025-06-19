@@ -1,14 +1,30 @@
 # Carespace Swift SDK
 
-A modern Swift SDK for the Carespace API with async/await support, designed for iOS, macOS, tvOS, and watchOS applications.
+[![Swift](https://img.shields.io/badge/Swift-5.7+-orange.svg)](https://swift.org)
+[![Platforms](https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS-blue.svg)](https://developer.apple.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Documentation](https://img.shields.io/badge/Documentation-DocC-purple.svg)](https://docs.carespace.ai/swift-sdk)
 
-## Requirements
+A modern, type-safe Swift SDK for the Carespace API with full async/await support, comprehensive error handling, and seamless integration with Apple platforms.
 
-- iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+
-- Xcode 14.0+
-- Swift 5.7+
+## 🚀 Features
 
-## Installation
+- **Modern Swift Concurrency**: Built with async/await for clean, efficient asynchronous code
+- **Type Safety**: Strongly typed request/response models with Codable support
+- **Comprehensive API Coverage**: Full access to authentication, users, clients, and programs endpoints
+- **Error Handling**: Detailed error types with localized descriptions
+- **Platform Support**: Universal framework supporting iOS, macOS, tvOS, and watchOS
+- **SwiftUI Ready**: Designed to work seamlessly with SwiftUI and Combine
+- **Customizable**: Flexible configuration options for different environments
+- **Well Documented**: Extensive documentation with code examples
+
+## 📋 Requirements
+
+- **iOS** 13.0+ / **macOS** 10.15+ / **tvOS** 13.0+ / **watchOS** 6.0+
+- **Xcode** 14.0+
+- **Swift** 5.7+
+
+## 📦 Installation
 
 ### Swift Package Manager
 
@@ -25,9 +41,11 @@ Or in Xcode:
 2. Enter the repository URL
 3. Select version and add to your target
 
-## Quick Start
+## 🏁 Quick Start
 
 ### Basic Setup
+
+Get up and running in just a few lines of code:
 
 ```swift
 import CarespaceSDK
@@ -47,9 +65,11 @@ let carespace = CarespaceAPI(baseURL: baseURL, apiKey: "your-api-key")
 CarespaceAPI.shared.setAPIKey("your-api-key")
 ```
 
-## Usage Examples
+## 📖 Usage Examples
 
-### Authentication
+### 🔐 Authentication
+
+The SDK provides comprehensive authentication support including login, logout, password reset, and token management.
 
 ```swift
 // Login
@@ -83,7 +103,9 @@ do {
 }
 ```
 
-### Working with Users
+### 👥 Working with Users
+
+Manage user accounts, profiles, and permissions with ease:
 
 ```swift
 // Get all users with pagination
@@ -135,7 +157,9 @@ do {
 }
 ```
 
-### Working with Clients
+### 🏥 Working with Clients
+
+Comprehensive client (patient) management capabilities:
 
 ```swift
 // Get all clients
@@ -198,7 +222,9 @@ do {
 }
 ```
 
-### Working with Programs
+### 📋 Working with Programs
+
+Create and manage healthcare programs with exercises:
 
 ```swift
 // Get all programs
@@ -262,9 +288,9 @@ do {
 }
 ```
 
-## Error Handling
+## ⚠️ Error Handling
 
-The SDK provides comprehensive error handling with the `CarespaceError` enum:
+The SDK provides comprehensive error handling with the `CarespaceError` enum, making it easy to handle different error scenarios gracefully:
 
 ```swift
 do {
@@ -289,9 +315,9 @@ do {
 }
 ```
 
-## SwiftUI Integration
+## 🎨 SwiftUI Integration
 
-The SDK works seamlessly with SwiftUI and the `@MainActor`:
+The SDK is designed to work seamlessly with SwiftUI, supporting the latest concurrency features:
 
 ```swift
 import SwiftUI
@@ -333,9 +359,11 @@ struct ContentView: View {
 }
 ```
 
-## Configuration Options
+## ⚙️ Configuration Options
 
 ### CarespaceConfiguration
+
+Customize the SDK behavior with comprehensive configuration options:
 
 ```swift
 let config = CarespaceConfiguration(
@@ -362,30 +390,83 @@ let prodConfig = CarespaceConfiguration(
 )
 ```
 
-## Thread Safety
+## 🔒 Thread Safety
 
 The SDK is designed to be thread-safe and can be used from any queue. All network operations are performed asynchronously and return to the caller's queue.
 
-## Testing
+## 🏗️ Architecture
 
-The SDK includes comprehensive unit tests. To run tests:
+The SDK follows a modular architecture:
+
+- **API Layer**: `CarespaceAPI` serves as the main entry point
+- **Service Layer**: Dedicated services for each API domain (Auth, Users, Clients, Programs)
+- **Network Layer**: `HTTPClient` handles all network communication
+- **Model Layer**: Type-safe Codable models for requests and responses
+- **Error Layer**: Comprehensive error handling with `CarespaceError`
+
+## 🧪 Testing
+
+The SDK includes comprehensive unit tests covering all major functionality.
+
+### Running Tests
 
 ```bash
+# Run all tests
 swift test
+
+# Run tests with coverage
+swift test --enable-code-coverage
+
+# Run specific test
+swift test --filter CarespaceSDKTests.testLoginRequest
 ```
 
-## Contributing
+### Test Coverage
+
+The SDK maintains high test coverage for:
+- Configuration management
+- Request/response models
+- Error handling
+- API endpoint integration
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
 
 1. Fork the repository
-2. Create a feature branch
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes
 4. Add tests for new functionality
-5. Submit a pull request
+5. Ensure all tests pass (`swift test`)
+6. Update documentation as needed
+7. Commit your changes (`git commit -m 'Add amazing feature'`)
+8. Push to the branch (`git push origin feature/amazing-feature`)
+9. Open a Pull Request
 
-## License
+### Development Guidelines
 
-This SDK is released under the MIT License. See LICENSE file for details.
+- Follow Swift API Design Guidelines
+- Maintain backward compatibility
+- Add unit tests for new features
+- Update documentation and examples
+- Use SwiftLint for code style consistency
 
-## Support
+## 📄 License
 
-For support, please contact support@carespace.ai or create an issue on GitHub.
+This SDK is released under the MIT License. See [LICENSE](LICENSE) file for details.
+
+## 💬 Support
+
+- **Documentation**: [https://docs.carespace.ai/swift-sdk](https://docs.carespace.ai/swift-sdk)
+- **API Reference**: [https://api.carespace.ai/docs](https://api.carespace.ai/docs)
+- **Email**: support@carespace.ai
+- **Issues**: [GitHub Issues](https://github.com/carespace/swift-sdk/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/carespace/swift-sdk/discussions)
+
+## 🙏 Acknowledgments
+
+Thanks to all contributors who have helped make this SDK better!
+
+---
+
+<p align="center">Made with ❤️ by the Carespace Team</p>
